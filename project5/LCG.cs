@@ -42,11 +42,17 @@ namespace Project_05_Random_Numbers_Generator
             }
             sw.Stop();
             int id = 0;
+            int diez_counter=0;
             Console.WriteLine("Results: ");
             for (int i = minValue; i < maxValue; i++)
             {
                 Console.Write($"{i}: ");
-                Console.Write($"{counter[id++] * 100.0 / n}% -- Time: {sw.ElapsedMilliseconds} ms.");
+                int diez = counter[diez_counter++] * 100 / n;
+                for (int k = 0; k < diez; k++)
+                {
+                    Console.Write("#");
+                }
+                Console.Write($" {counter[id++] * 100.0 / n}% -- Time: {sw.ElapsedMilliseconds} ms.");
                 Console.WriteLine();
             }
          }
